@@ -4,6 +4,7 @@ import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { Contact } from "./entities/contact.entity";
 import { ContactService } from './contact/contact.service';
+import { ContactController } from './contact/contact.controller';
 
 @Module({
     imports: [
@@ -17,7 +18,7 @@ import { ContactService } from './contact/contact.service';
         }),
         TypeOrmModule.forFeature([Contact])
     ],
-    controllers: [AppController],
+    controllers: [AppController, ContactController],
     providers: [AppService, ContactService]
 })
 export class AppModule {}
